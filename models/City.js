@@ -7,7 +7,9 @@ let schema = new Schema({
     language : {type:String, require:true},
     currency : {type:String, require: true},
     religion : {type:String, require:true},
-    image : {type:String, require:true}
+    image : {type:String, require:true},
+    description: {type:String, require:true},
+    itinerarie: {type: Schema.Types.ObjectId, ref: 'itineraries', require:true}
 })
 
 let City = model(collection, schema)

@@ -1,4 +1,5 @@
 import City from "../../models/City.js";
+import '../../models/Itinerarie.js'
 
 let allCities = async (req, res, next) => {
     try {
@@ -8,7 +9,7 @@ let allCities = async (req, res, next) => {
             query.name = {$regex: name, $options: 'i'}
         }
 
-        let cities = await City.find(query)
+        let cities = await City.find(query).populate('itinerarie','photo name price duration likes hashtags').exec()
         return res.status(200).json({
             response : cities
         })
