@@ -25,9 +25,9 @@ server.use(morgan('dev'))
 
 
 server.use('/api', indexRouter)
-//server.use(error_404)
-//server.use(error_400)
-//server.use(error_500)
+// server.use(error_404)
+// server.use(error_400)
+// server.use(error_500)
 
 
 

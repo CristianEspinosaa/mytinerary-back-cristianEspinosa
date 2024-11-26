@@ -28,3 +28,13 @@ export let usersByName = async (req, res, next) => {
         next(error)
     }
 }
+
+export let userValid = async (req, res, next) => {
+    try {
+        return res.status(200).json({
+            response : req.user
+        })
+    } catch (error) {
+        next(error)
+    }
+}
